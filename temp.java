@@ -1,50 +1,43 @@
-import java.util.*;
-public class temp {
-    public static void main(String[] args){
-        kp soln = new kp();
-        int[] ques = {1,3,-1,-3,5,3,6,7};
-        int[] l = soln.maxSlidingWindow(ques,3);
-        System.out.println(Arrays.toString(l));
-    }
-}
-
-
-class kp {
-    public int[] maxSlidingWindow(int[] nums, int k) {
-        
-        int deque[] = new int[nums.length];
-        
-        int enq=-1,deq=0;
-        
-
-        int res[] = new int[nums.length];
-        int tr = 0;
-            
-        for(int i=0;i<nums.length;i++){
-            
-            System.out.println(Arrays.toString(deque));
-            
-            if(enq==-1){
-                deque[++enq]=nums[i];
-            }else if(nums[enq]>nums[i]){
-                deque[++enq]=nums[i];
-            }else{
-                while(deque[enq]<nums[i]){
-                    enq--;
-                    if(enq==-1){
-                        deque[++enq]=nums[i];
-                        break;
-                    }
-                }                
-            }
-            
-            if(i>=k-1){
-                res[tr++] = deque[deq];
-                deq++;
-            }                                                        
-        }
-        return res;
-        
-        
-    }
+class InvalidAgeException  extends Exception  
+{  
+    public InvalidAgeException (String str)  
+    {  
+        // calling the constructor of parent Exception  
+        super(str);  
+    }  
+}  
+    
+// class that uses custom exception InvalidAgeException  
+public class temp  
+{  
+  
+    // method to check the age  
+    static void validate (int age) throws InvalidAgeException{    
+       if(age < 18){  
+  
+        // throw an object of user defined exception  
+        throw new InvalidAgeException("age is not valid to vote");    
+    }  
+       else {   
+        System.out.println("welcome to vote");   
+        }   
+     }    
+  
+    // main method  
+    public static void main(String args[])  
+    {  
+        try  
+        {   
+            validate(13);  
+        }  
+        catch (InvalidAgeException ex)  
+        {  
+            System.out.println("Caught the exception");  
+    
+            // printing the message from InvalidAgeException object  
+            System.out.println("Exception occured: " + ex);  
+        }  
+  
+        System.out.println("rest of the code...");    
+    }  
 }
