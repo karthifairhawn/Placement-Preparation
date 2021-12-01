@@ -36,6 +36,7 @@ class LinkedList{
         node.next = head;
         head=node;
     }
+    
     public void deleteAt(int a){
         if(a==0){
             Node newnode = head.next;
