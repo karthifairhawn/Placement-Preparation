@@ -7,7 +7,7 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 import java.util.*;
-public class Main
+public class MergeSort
 {
     public static void merge(int [] left,int[] right,int[] arr,int l_len,int r_len){
         int l=0,r=0,i=0;
