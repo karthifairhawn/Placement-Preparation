@@ -19,7 +19,7 @@ public class MergeSort
         while(l<l_len)  arr[i++] = left[l++];
         while(r<r_len)  arr[i++] = right[r++];
     }
-    public static void mergeSort(int[] arr,int n){
+    public static void mergeSort(int[] arr,int n){      
         if(n<2) return;
         int mid = n/2;
         int[] left = new int[mid];
@@ -39,7 +39,7 @@ public class MergeSort
     }
     
 	public static void main(String[] args) {
-		int arr[] = {12,13,42,16,1,2,5,4,89,82};
+		int arr[] ={12,67,32,82,10,2,7,23,78,90,56,12,24,76,78,56};
 		int n = arr.length;
 		mergeSort(arr,n);
 		System.out.println(Arrays.toString(arr));
