@@ -1,4 +1,4 @@
-package gridTraveller;
+
 
 import java.util.HashMap;
 

@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "Sorting Algorithmas",
-        "Dynamic Programs/fibonacci"
+        "Dynamic Programs/fibonacci",
+        "Dynamic Programs/gridTraveller"
     ]
 }
