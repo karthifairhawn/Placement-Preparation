@@ -1,0 +1,162 @@
+Given an integer n. Return the nth row of the following look-and-say pattern.
+1
+11
+21
+1211
+111221
+Example 1:
+  Input:
+    n = 5
+  Output: 111221
+Explanation: The 5th row of the given pattern will be 111221.
+Example 2:
+  Input:
+    n = 3
+  Output: 21
+  Explanation: The 3rd row of the given pattern will be 21.
+
+
+program:
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String str="1";
+        if(n==1){ 
+            System.out.print("1");
+            System.exit(0);
+        }    
+        for(int i=1;i<=n;i++){
+            char c = str.charAt(0);
+            int count = 1;
+            StringBuilder s = new StringBuilder();
+            for(int j=1;j<str.length();j++)
+            {
+                if(c!=str.charAt(j)){ 
+                    s.append(count);1
+                    s.append(c);2
+                    c = str.charAt(j);
+                    count = 0;
+                }
+                count++;
+        }
+        s.append(count);
+        s.append(c);
+        str=s.toString();
+    }
+    System.out.print(str);
+}	
+}
+
+
+
+Write a java program for print pascal triangle
+Input:5                               
+Output:                               
+*                                     
+* *                                   
+* * *                                           
+* * * *                               
+* * * * *                             
+* * * * 
+* * * 
+* * 
+*
+
+program:
+import java.util.*;  
+public class Main  
+{  
+    public static void main(String[] args)  
+    {  
+        Scanner sc=new Scanner(System.in);  
+        int n=sc.nextInt();         
+        for (int i=1;i<=n;i++)  
+        {  
+            for(int j=1;j<=i;j++)
+            {  
+                System.out.print("*"+ " ");  
+            }   
+        System.out.println("");   
+        }   
+        for(int i=n-1;i>0;i--)
+        {  
+            for(int j=1;j<=i;j++)  
+            {  
+                System.out.print("*"+ " ");  
+            }  
+            System.out.println(""); 
+        }  
+	}
+}
+
+
+Based on the input value of N. the program must print the pattern described below.
+Input:
+5
+Output:
+1 6 10 13 15
+2 7 11 14
+3 8 12
+4 9
+5
+
+program:
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    for(int i=0;i<n;i++) 
+	    {
+	        int c=n-i;
+	        int p=i+1;
+	        for(int j=0;j<c;j++)
+	        {
+	            System.out.print(p+" ");
+	            p=p+n-j;
+	       }
+	       System.out.println();
+	   }
+	}
+}
+
+
+
+Given a string of odd length, print the string X format.
+Input:
+Program
+Output:
+p     m
+ r   a 
+  o r  
+   g   
+  o r  
+ r   a 
+p     m
+
+code:
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		int len=str.length();
+		for(int i=0;i<len;i++)
+        {
+            int j=len-1-i; 
+            for(int k=0;k<len;k++)
+            {
+                if(k==i||k==j)
+                    System.out.print(str.charAt(k));
+                else
+                    System.out.print(" ");
+            }
+        System.out.println("");
+        }
+    }   
+}
