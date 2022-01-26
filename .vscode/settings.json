@@ -1,7 +1,8 @@
 {
     "java.project.sourcePaths": [
         "Sorting Algorithmas",
+        "Dynamic Programs/gridTraveller",
         "Dynamic Programs/fibonacci",
-        "Dynamic Programs/gridTraveller"
+        "Zoho/Problems"
     ]
 }
