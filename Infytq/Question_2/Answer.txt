@@ -1,0 +1,49 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+class temp{
+	public static void main(String[] args) {
+	    Scanner scanner = new Scanner(System.in); //gt4r22w7e
+		String instr = scanner.nextLine();
+
+        if(!isCollapsed(instr)) {
+            System.out.println(-1);
+            return;
+        }
+
+        String alpha="";
+        String digit="";
+
+        for(char i:instr.toCharArray()) {
+            if(i>='0' && i<='9') digit+=i;
+            else    alpha+=i;            
+        }
+        char[] alphaArr = alpha.toCharArray();
+        char[] digitArr = digit.toCharArray();
+        Arrays.sort(alphaArr);
+        Arrays.sort(digitArr);
+        
+        int alphDiff = Math.abs(instr.indexOf(alphaArr[0]) - instr.indexOf(alphaArr[alphaArr.length-1]));
+        int digDiff = Math.abs(instr.indexOf(digitArr[0]) - instr.indexOf(digitArr[digitArr.length-1]));
+
+
+        for(char i:alphaArr)   System.out.print(i);        
+        System.out.print(alphDiff+":");
+
+        int sum=0;
+        for(char i:digitArr)   sum+= i-'0';
+        
+        System.out.println(sum+""+digDiff);
+        
+	}
+    public static boolean isCollapsed(String x){
+        boolean alpha=false,digit=false;        
+        for(char i:x.toCharArray()){
+            if(i>='0' && i<='9'){   digit=true; }
+            if(i>='a' && i<='z'){   alpha=true; }
+            if(i>='A' && i<='Z'){   alpha=true; }
+        }
+        if(alpha && digit){ return true;    }
+        return false;
+    }
+}

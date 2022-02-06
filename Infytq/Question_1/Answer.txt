@@ -1,0 +1,84 @@
+import java.util.*;
+
+public class temp2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String[] x = sc.nextLine().split(",");
+        String[] y = sc.nextLine().split(",");
+
+        
+
+        List<Integer> common = common(x, y);
+        Collections.sort(common);
+
+        if(common.size()==0 || common.get(0)==0){
+            System.out.println(-1);
+            return;
+        }
+
+        int toGet = common.get(0);
+        if((""+toGet).length()>0) {
+            toGet = reduce(toGet);
+        }   
+
+        if(toGet>x.length || toGet>y.length){
+            System.out.println(-1);
+            return;
+        }
+        
+        List<Integer> li1 = new ArrayList<>();
+        List<Integer> li2 = new ArrayList<>();
+
+        for(String i:x){
+            li1.add(Integer.parseInt(i));
+        }
+        for(String i:y){
+            li2.add(Integer.parseInt(i));
+        }
+        Collections.sort(li1);
+        Collections.sort(li2);
+
+        int start=li1.size()-toGet;
+        while(start<li1.size()){
+            if(start==li1.size()-1){
+                System.out.print(li1.get(start));    
+                break; 
+            }
+            System.out.print(li1.get(start)+",");
+            start++;
+        }
+        System.out.println();
+
+        start=li2.size()-toGet;
+        while(start<li2.size()){
+            if(start==li2.size()-1){
+                System.out.print(li2.get(start));    
+                break; 
+            }
+            System.out.print(li2.get(start)+",");
+            start++;
+        }
+
+    }
+    private static int reduce(int n) {
+        int sum = 0;
+        while (n > 0 || sum > 9)
+        {
+            if (n == 0) {
+                n = sum;
+                sum = 0;
+            }
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+    public static List<Integer> common(String[] x, String[] y) {
+        List<Integer> comm = new ArrayList<Integer>();
+        Hashtable<String,Integer> h = new Hashtable<String,Integer>();
+        for (String i : x)  h.put(i, 1);
+        for (String j : y)     if(h.containsKey(j)){   comm.add(Integer.parseInt(j));}
+        return comm;
+    }
+}
