@@ -1,0 +1,79 @@
+Question : https://leetcode.com/problems/kth-largest-element-in-an-array/
+
+
+##Quick Select Algorithm
+
+class Solution {
+    
+    public int quickSelect(int[] nums,int start,int end,int toFind){
+        
+        int slow = start;    
+        int fast = start;
+        int pivot = nums[end];
+
+        
+        while(fast<end){
+            if(nums[fast]<=pivot){
+                int temp = nums[slow];
+                nums[slow]=nums[fast];
+                nums[fast]=temp;
+                slow++;
+            }
+            fast++;
+        }
+        
+
+        int temp = nums[slow];
+        nums[slow]=nums[end];
+        nums[end]=temp;
+
+//         System.out.println(Arrays.toString(nums));
+
+//         System.out.println(start+" "+end);
+        
+
+        if(toFind<slow)  return quickSelect(nums,start,--slow,toFind);  
+        
+        else if(toFind>slow) return quickSelect(nums,++slow,end,toFind); 
+            
+        else return nums[slow];
+        
+    }
+    
+    
+    public int findKthLargest(int[] nums, int k) {
+        
+        if(nums.length==1) return nums[0];
+        
+        int toFind = nums.length-k;
+        
+        return quickSelect(nums,0,nums.length-1,toFind);
+        
+        
+    }
+}
+
+###Priority Queue Approach
+
+class Solution {
+    
+
+    
+    
+    public int findKthLargest(int[] nums, int k) {
+        
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+        for(int i:nums){
+            pq.add(i); 
+            if(pq.size()>k) pq.remove();
+        }
+        
+        //System.out.println(pq);
+            
+        return pq.remove();
+        
+        
+    }
+}
+
