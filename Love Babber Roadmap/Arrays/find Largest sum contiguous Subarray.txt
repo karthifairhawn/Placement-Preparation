@@ -1,0 +1,21 @@
+Question: https://leetcode.com/problems/maximum-subarray
+
+### Kadane's Algorithm
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+      
+        
+        int sum=0;
+        int res=Integer.MIN_VALUE;
+        
+        
+        for(int i:nums){
+            sum+=i;            
+            res = Math.max(res,sum);            
+            if(sum<0)   sum=0;                                            
+        }
+        return res;
+        
+    }
+}

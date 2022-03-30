@@ -1,0 +1,26 @@
+Question: https://leetcode.com/submissions/detail/542382151/
+
+
+# Reverse and reverse the first and second half
+
+class Solution {
+    public void reverse(int arr[],int start,int end)
+    {
+        while(start<=end)
+        {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+    public void rotate(int[] nums, int k) {
+        // if k > nums.length then for that case just modulo it by the length of the array
+        k = k%nums.length;
+        reverse(nums,0,nums.length-1);
+        reverse(nums,0,k-1);
+        reverse(nums,k,nums.length-1);
+    }
+        
+}
