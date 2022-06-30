@@ -2,7 +2,7 @@ public class MaximumPossiblePalindrom_6 {
     public static void main(String[] args) {
         String x = "madameaga";
 
-        char key[] = new char[255];        
+        int key[] = new int[255];        
 
         for (int i = 0; i < x.length(); i++) {
             key[x.charAt(i)]++;
