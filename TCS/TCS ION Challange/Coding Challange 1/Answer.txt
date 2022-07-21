@@ -1,0 +1,1 @@
+import java.util.*; class MyClass{ public static void main(String[] args){ Scanner sc = new Scanner(System.in); String arr[] = sc.nextLine().split(" "); String search = sc.next(); search = search.toLowerCase(); int count=0; for(int i=0;i0 ? count : "Word not found."); } }
