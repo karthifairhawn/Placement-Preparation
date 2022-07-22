@@ -116,3 +116,13 @@ class LinkedList{
 // data - 10   data -20    data -30    data -40    data -50
 // next - b    next -c     next -e     next-e      next - null
 // 0            1          2           3           4
+
+
+
+// Linked List Operations
+// Show
+// Remove
+// Insert
+// insertAtFirst
+// insertAtSpecificIndex
+// FindIndex
