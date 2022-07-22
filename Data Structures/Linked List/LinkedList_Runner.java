@@ -15,6 +15,13 @@ public class LinkedList_Runner{
         // Deletion
         list.remove(2);
 
+        // Searcg 
+        System.out.println(list.findIndexOf(8000));
+
+
+        // Insert at specif index
+        list.insertAtSpecificIndex(60,3);
+                
         // Display
         list.show();
     }
@@ -68,11 +75,44 @@ class LinkedList{
         previousNode.next=previousNode.next.next;
     }
 
+    public void insertAtSpecificIndex(int newData,int index){
+            Node newNode=new Node(newData);
+            Node currentNode=head;
+            Node previousNode;
+            Node nextNode;
+
+            for(int i=0;i<index-1;i++) currentNode=currentNode.next; 
+            
+            previousNode=currentNode;
+            nextNode=currentNode.next;
+
+            previousNode.next=newNode;
+            newNode.next=nextNode;
+
+    }
+
+    public int findIndexOf(int findData){
+        Node currentNode=head;
+        int index=0;
+
+        while(currentNode!=null){
+            if(currentNode.data==findData){
+                return index;                
+            }
+            currentNode=currentNode.next;
+            index++;                        
+        }
+        return -1;
+
+        
+        
+         
+    }
 }
 
 
                 
-// node -a     node -b     node-c       node -d     node -e
-// data - 10   data -20    data -30     data -40    data -50
-// next - b    next -c     next -d      next - e    next - null
-// 0               1           2              3        4
+// node -a     node -b     node-c   || node -d     node -e          
+// data - 10   data -20    data -30    data -40    data -50
+// next - b    next -c     next -e     next-e      next - null
+// 0            1          2           3           4
