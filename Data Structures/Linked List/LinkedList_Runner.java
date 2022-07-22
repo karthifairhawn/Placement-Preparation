@@ -1,73 +1,78 @@
-public class LinkedList_Runner {
-    public static void main(String args[]) {
-        
-        LinkedList li = new LinkedList();
-        li.insert(10);
-        li.insert(20);
-        li.insert(30);
-        li.insertAtStart(99);
-        li.deleteAt(1);
-        li.display();
+public class LinkedList_Runner{
+    public static void main(String[] args) {
+
+        LinkedList list=new LinkedList(20);
+
+        // Insertion of data
+        list.insert(30);
+        list.insert(40);
+        list.insert(50);
+        list.insert(60);
+
+        // Insert at first
+        list.insertAtFirst(70);
+
+        // Deletion
+        list.remove(2);
+
+        // Display
+        list.show();
     }
 }
-
-
-class LinkedList{
-    Node head;
-    
-    public void insert(int a){
-        Node n = new Node();
-        n.data=a;
-        n.next=null;
-        
-        if(head==null){
-            head = n;
-        }else{
-            Node d = head;
-            while(d.next!=null){
-                d=d.next;
-            }
-            d.next = n;
-        }
-    }
-    public void insertAtStart(int a){
-        Node node = new Node();
-        node.data=a;
-        node.next = head;
-        head=node;
-    }
-    
-    public void deleteAt(int a){
-        if(a==0){
-            Node newnode = head.next;
-            head = newnode;
-        }else{
-            Node newnode = new Node();            
-
-            Node traverse = head;
-
-            for(int i=1;i<a-1;i++){
-                traverse = traverse.next;
-            }
-
-            newnode = traverse.next.next;
-            traverse.next = newnode;
-
-        }
-    }
-    
-    public void display(){
-        Node nex = head;
-        while(nex.next!=null){
-            System.out.println(nex.data);
-            nex = nex.next;
-        }
-        System.out.println(nex.data);
-    }
-    
-}
-
 class Node{
     int data;
     Node next;
+
+    Node(int data){
+        this.data=data;
+    }
 }
+
+class LinkedList{
+    Node head;
+    int size;
+
+    LinkedList(int headData){
+        this.head=new Node(headData);
+    }
+
+    public void insert(int newData){
+        Node newNode=new Node(newData); 
+        Node currentNode=head;
+        while(currentNode.next!=null) currentNode = currentNode.next;        
+        currentNode.next=newNode; 
+    }
+    
+    public void show(){
+        Node currentNode=head;
+        
+        while(currentNode!=null){
+            System.out.print(currentNode.data+" ");
+            currentNode=currentNode.next;            
+        }
+    }
+    
+    public void insertAtFirst(int newData){
+        Node first=new Node(newData);
+        first.next=head;
+        head=first;
+    }
+
+    public void remove(int index){
+        Node previousNode;
+        Node currentNode=head;        
+        for(int i=0;i<index-1;i++){
+            currentNode=currentNode.next;
+        }        
+        previousNode=currentNode;
+        previousNode.next=previousNode.next.next;
+    }
+
+}
+
+
+                
+// node -a     node -b     node-c       node -d     node -e
+// data - 10   data -20    data -30     data -40    data -50
+// next - b    next -c     next -d      next - e    next - null
+// 0               1           2              3        4
