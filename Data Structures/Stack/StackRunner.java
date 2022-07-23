@@ -39,7 +39,8 @@ class Stack {
         boundaryValue++;
         array[boundaryValue]=newValue;
     }
-    public int pop(){
+    public int pop(){                
+
         int result = array[boundaryValue];
         boundaryValue--;
         return result;
