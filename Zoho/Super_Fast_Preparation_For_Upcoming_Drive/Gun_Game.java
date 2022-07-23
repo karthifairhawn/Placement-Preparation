@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Random;
+import java.util.Scanner;
 class Game{
 
     private char map[][];
@@ -102,6 +103,8 @@ class Game{
             }else{
                 System.out.println("Invalid choice");
             }
+		sc.close();
+
         }
     }
 

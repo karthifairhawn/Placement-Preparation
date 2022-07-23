@@ -37,6 +37,7 @@ class Zoho3{
 	if(!found){
 		System.out.println("No celeb");
 	}
+	sc.close();
 
 	
  }

@@ -14,6 +14,7 @@ class Zoho4{
 	
 	if(n<=3){
 		System.out.print(max);
+		sc.close();
 		return;
 	}
 	//
@@ -55,6 +56,7 @@ class Zoho4{
 		System.out.println("OP="+res);
 	}
 		
+	sc.close();
 	
  }
 }

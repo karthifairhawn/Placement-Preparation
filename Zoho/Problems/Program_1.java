@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 class Program_1{
@@ -55,6 +54,7 @@ class Program_1{
                 }
             }
         }
+		sc.close();
 
     }
 }

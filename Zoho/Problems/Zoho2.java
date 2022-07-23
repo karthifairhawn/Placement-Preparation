@@ -55,6 +55,6 @@ public class Zoho2{
 			}
 			i++;
 		}
-		
+		sc.close();
 	}
 }

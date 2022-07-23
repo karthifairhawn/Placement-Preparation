@@ -19,6 +19,7 @@ public class Zoho{
 			}
 		}
 		//sort comp
+		sc.close();
 
 		if(n==1) return ;
 		System.out.print(arr[1]+" ");
@@ -34,6 +35,8 @@ public class Zoho{
 		if(n%2!=0){
 			System.out.print(arr[right--]+" ");				
 		}
+		sc.close();
+
 	}
 }
 
