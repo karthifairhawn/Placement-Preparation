@@ -1,4 +1,4 @@
-package Interface;
+package OOPS.Inheritance.Interface;
 
 public class Dog implements Animal {
     public void sound() {

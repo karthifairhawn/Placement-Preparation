@@ -1,3 +1,4 @@
+package Zoho.Super_Fast_Preparation_For_Upcoming_Drive;
 public class Distinct_Words_5 {
     public static void main(String[] args) {
         String x = "This is zoho and zoho is good";

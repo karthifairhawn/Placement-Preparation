@@ -1,4 +1,4 @@
-package Absract;
+package OOPS.Inheritance.Absract;
 
 public class Dog extends Animal{
     String age;

@@ -1,4 +1,4 @@
-package Class;
+package OOPS.Inheritance.Class;
 
 public class Runner {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Absract;
+package OOPS.Inheritance.Absract;
 
 public abstract class Animal {
     String name;

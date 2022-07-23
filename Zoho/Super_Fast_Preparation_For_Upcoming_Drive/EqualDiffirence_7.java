@@ -1,3 +1,4 @@
+package Zoho.Super_Fast_Preparation_For_Upcoming_Drive;
 public class EqualDiffirence_7 {
     public static void main(String[] args) {
         String x = "abcdefgh"; // adxz

@@ -1,3 +1,6 @@
+package Zoho.Problems;
+
+
 import java.util.*;
 class Zoho4{
  public static void main(String args[]){

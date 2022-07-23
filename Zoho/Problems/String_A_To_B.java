@@ -1,3 +1,5 @@
+package Zoho.Problems;
+
 class String_A_To_B{
     public static void main(String[] args) {
         String A = "EACBD";

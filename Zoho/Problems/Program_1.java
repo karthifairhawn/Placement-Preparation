@@ -1,3 +1,5 @@
+package Zoho.Problems;
+
 import java.util.Scanner;
 
 class Program_1{

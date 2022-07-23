@@ -1,13 +1,9 @@
 {
     "java.project.sourcePaths": [
-        "Zoho/Super_Fast_Preparation_For_Upcoming_Drive",
-        "Zoho/Problems",
-        "Sorting Algorithmas",
-        "OOPS/Inheritance",
-        "Dynamic Programs/gridTraveller",
-        "Dynamic Programs/fibonacci",
-        "Data Structures/Stack",
-        "Data Structures/Queue",
-        "OOPS/ThisKeyword"
+        "."
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "e:\\Warrior\\IDE and Lap Setup Files\\Jars\\gson-2.8.2.jar"
     ]
 }

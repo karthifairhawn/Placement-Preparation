@@ -1,4 +1,5 @@
-package Class;
+package OOPS.Inheritance.Class;
+
 
 public class Dog extends Animal{
     String age;

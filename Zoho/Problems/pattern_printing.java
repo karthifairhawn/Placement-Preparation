@@ -1,3 +1,4 @@
+package Zoho.Problems;
 public class pattern_printing {
     public static void main(String[] args){
         String a ="sdfgsdgsdg";
