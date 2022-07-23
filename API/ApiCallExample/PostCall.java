@@ -8,10 +8,13 @@ import java.net.http.HttpResponse;
 
 public class PostCall {
     public static void main(String[] args) throws IOException, InterruptedException {              
+      
+      String sampleJson = "{\"name\":\"John\",\"age\":30,\"cars\":[\"Ford\",\"BMW\",\"Fiat\"]}";
+
 
       HttpRequest req = HttpRequest.newBuilder()
               .uri(URI.create("https://karthifairhawn.requestcatcher.com/"))
-              .GET()                
+              .POST(HttpRequest.BodyPublishers.ofString(sampleJson))             
               .build();
       
       HttpClient client = HttpClient.newHttpClient();
